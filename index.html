@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="STABL - Product Demo for Premium Gym Shoes. Engineered for Weightlifting and Versatile Workouts.">
+  <title>STABL - Product Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Impact&family=Roboto+Condensed:wght@400;700&family=Anime+Ace&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Roboto Condensed', sans-serif;
+      background-color: #1a1a1a;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    h1, h2, h3 {
+      font-family: 'Anime Ace', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    nav a {
+      font-family: 'Impact', sans-serif;
+      letter-spacing: 1px;
+    }
+    p, li {
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+    .section-bg {
+      background: linear-gradient(45deg, #2d2d2d, #3a3a3a);
+      position: relative;
+      overflow: hidden;
+    }
+    .bg-black {
+      background-color: #1a1a1a;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Subtle Gym, Shoe, and Stability Patterns */
+    .section-bg::before,
+    .bg-black::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.1;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.2) 10px, rgba(255, 255, 255, 0.2) 20px),
+        repeating-linear-gradient(135deg, transparent, transparent 15px, rgba(255, 255, 255, 0.2) 15px, rgba(255, 255, 255, 0.2) 30px);
+      background-size: 
+        50px 50px,
+        50px 50px,
+        40px 40px,
+        60px 60px;
+    }
+    .luxury-red {
+      color: #a80621;
+    }
+    .luxury-red-bg {
+      background-color: #a80621;
+    }
+    .luxury-red-border {
+      border-color: #a80621;
+    }
+    .luxury-red-hover:hover {
+      background-color: #8c051a;
+    }
+    /* Glow Effect for STABL and Grounded For Greatness */
+    .glow {
+      animation: glow 2s infinite ease-in-out;
+    }
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #a80621, 0 0 10px #a80621; }
+      50% { text-shadow: 0 0 10px #a80621, 0 0 20px #a80621, 0 0 30px #a80621; }
+      100% { text-shadow: 0 0 5px #a80621, 0 0 10px #a80621; }
+    }
+    h2 {
+      position: relative;
+      display: inline-block;
+      color: #fff;
+      padding-bottom: 5px;
+      margin-bottom: 1rem;
+    }
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50%;
+      height: 4px;
+      background-color: #a80621;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fadeIn 2.5s ease-in-out forwards;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    .animate-pulse {
+      animation: pulse 2s infinite ease-in-out;
+    }
+    .hover-scale {
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .hover-scale:hover {
+      transform: scale(1.05);
+    }
+    nav a:hover {
+      color: #a80621;
+      text-shadow: 0 0 10px rgba(168, 6, 33, 0.8);
+    }
+    .section-content {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .section-content.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    video {
+      max-width: 500px;
+      width: 100%;
+      border: 2px solid #a80621;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with Navigation -->
+  <header class="bg-black text-white sticky top-0 z-10 border-b-4 luxury-red-border">
+    <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="text-4xl font-bold luxury-red glow">STABL</div>
+      <div class="space-x-6">
+        <a href="#home" class="text-white text-xl hover-scale">Home</a>
+        <a href="#demo" class="text-white text-xl hover-scale">Demo</a>
+        <a href="#features" class="text-white text-xl hover-scale">Features</a>
+        <a href="#contact" class="text-white text-xl hover-scale">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="bg-black text-white py-20">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-2 luxury-red drop-shadow-lg animate-fade-in">
+        Unshakeable ground, Unstoppable form,
+      </h1>
+      <h2 class="text-3xl md:text-4xl font-bold mb-2 luxury-red drop-shadow-lg animate-fade-in" style="animation-delay: 1s;">
+        Presenting <span class="glow">STABL</span>
+      </h2>
+      <p class="text-xl md:text-2xl font-bold mb-4 text-white drop-shadow-md animate-fade-in" style="animation-delay: 2s;">
+        World's first "solely" engineered Trainers, for lifters who don't Compromise.
+      </p>
+      <p class="text-2xl md:text-3xl font-bold text-white drop-shadow-md animate-fade-in glow" style="animation-delay: 3s;">
+        "Grounded For Greatness"
+      </p>
+    </div>
+  </section>
+
+  <!-- Video Demo Section -->
+  <section id="demo" class="py-16 section-bg">
+    <div class="max-w-6xl mx-auto px-4 section-content">
+      <h2 class="text-4xl font-bold luxury-red mb-8 text-center">Product Demo Videos</h2>
+      <div class="flex flex-col md:flex-row justify-center gap-8 mb-8">
+        <div class="flex-1 text-center">
+          <video controls class="mx-auto">
+            <source src="videos/demo-video-1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="mt-4">The Hero Shoe in Action</p>
+        </div>
+        <div class="flex-1 text-center">
+          <video controls class="mx-auto">
+            <source src="videos/demo-video-2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="mt-4">Projekt X: Built for Heavy Lifts</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Info Section -->
+  <section id="features" class="py-16 bg-black">
+    <div class="max-w-6xl mx-auto px-4 section-content">
+      <h2 class="text-4xl font-bold luxury-red mb-8 text-center">Why Choose STABL?</h2>
+      <h3 class="text-2xl font-bold mb-4 text-center">Rooted in Ancient Wisdom: Stability from the Ground Up</h3>
+      <p class="mb-4 text-center">STABL’s design philosophy draws inspiration from ancient Hindu and Vedic traditions, where being close to the ground during exercise was key to strength and stability. Traditional practices like yoga asanas, dands (Hindu push-ups), and baithaks (deep squats) emphasize grounded postures that build balance, power, and control.</p>
+      <p class="mb-6 text-center">These time-tested movements kept athletes connected to the earth, enhancing performance and focus—principles we’ve engineered into every pair of STABL shoes. Experience the perfect blend of ancient sports science and modern innovation to stay stable, strong, and ready to lift heavier.</p>
+      <ul class="list-disc list-inside mb-6 mx-auto max-w-2xl">
+        <li>Perfect for heavy lifts like squats, deadlifts, and bench press.</li>
+        <li>Versatile for dynamic workouts, from HIIT to cross-training.</li>
+        <li>Built to last with premium materials and reinforced design.</li>
+        <li>Grounded stability inspired by ancient training principles.</li>
+      </ul>
+      <div class="text-center">
+        <a href="#contact" class="inline-block luxury-red-bg text-white px-8 py-4 text-xl font-bold rounded-lg luxury-red-hover shadow-lg hover-scale animate-pulse">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 section-bg">
+    <div class="max-w-6xl mx-auto px-4 section-content text-center">
+      <h2 class="text-4xl font-bold luxury-red mb-8">Contact Us</h2>
+      <p class="mb-6">Want to learn more about STABL? Reach out to us!</p>
+      <div class="flex flex-col md:flex-row justify-center gap-4">
+        <a href="mailto:hamoodx614@gmail.com" class="inline-block bg-black text-white px-6 py-3 text-lg font-bold rounded-lg hover:bg-gray-800 shadow-lg hover-scale">Email Us</a>
+        <a href="tel:00918826731079" class="inline-block bg-black text-white px-6 py-3 text-lg font-bold rounded-lg hover:bg-gray-800 shadow-lg hover-scale">Call Us: 00918826731079</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-6 text-center border-t-4 luxury-red-border">
+    <p class="text-lg">
+      © 2025 STABL. All rights reserved. | 
+      <a href="https://www.wearstabl.com" class="luxury-red hover-scale">www.wearstabl.com</a>
+    </p>
+  </footer>
+
+  <!-- JavaScript for Scroll Animations -->
+  <script>
+    const sections = document.querySelectorAll('.section-content');
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
